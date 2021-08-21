@@ -30,7 +30,7 @@ export default class CellAutomata extends Component {
 
   runGameOfLife = () => {
     clearInterval(this.intervalId);
-    this.intervalId = setInterval(this.stepGOL, 50);
+    this.intervalId = setInterval(this.stepGOL, 100);
   };
 
   handlemouseDown(row, col) {
@@ -40,8 +40,6 @@ export default class CellAutomata extends Component {
 
   handleMouseEnter(row, col) {
     if (!this.state.mouseIsPressed) return;
-    // const newGrid = getNewGrid(this.state.grid, row, col);
-    // this.setState({ grid: newGrid });
     getNewGrid(this.state.grid, row, col);
     this.setState({ grid: this.state.grid, mouseIsPressed: true });
   }
@@ -57,6 +55,7 @@ export default class CellAutomata extends Component {
   clear = () => {
     this.componentDidMount();
     this.stop();
+    this.generations = 0;
   };
 
   seed = () => {

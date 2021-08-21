@@ -3,6 +3,7 @@
   height: 12px;
   outline: 1px solid #3bebca;
   display: inline-block;
+  resize: none;
 }
 
 .cell-alive {

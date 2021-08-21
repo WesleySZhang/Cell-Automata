@@ -1,6 +1,7 @@
 .grid {
   margin: 20px 0 0;
   line-height: 0;
+  resize: none;
 }
 
 .generations {
