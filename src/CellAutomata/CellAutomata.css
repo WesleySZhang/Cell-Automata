@@ -1,0 +1,9 @@
+.grid {
+  margin: 20px 0 0;
+  line-height: 0;
+}
+
+.generations {
+  font: Sans-serif;
+  color: rgb(232, 8, 8);
+}
