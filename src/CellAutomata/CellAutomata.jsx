@@ -6,7 +6,7 @@ import "./CellAutomata.css";
 
 const rows = 50;
 const cols = 80;
-var generations = 0;
+
 export default class CellAutomata extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +14,13 @@ export default class CellAutomata extends Component {
       grid: [],
       mouseIsPressed: false,
       started: false,
+      generations: 0,
+      automations: [
+        { id: '', name: 'Select Automation' },
+        { id: 'GOL', name: 'Game of Life' }
+
+      ],
+      automation: ""
     };
   }
 
@@ -25,12 +32,12 @@ export default class CellAutomata extends Component {
   stepGOL = () => {
     const newGrid = gameOfLife(this.state.grid, rows, cols);
     this.setState({ grid: newGrid });
-    generations++;
+    this.setState({ generations: this.state.generations + 1 });
   };
 
   runGameOfLife = () => {
     clearInterval(this.intervalId);
-    this.intervalId = setInterval(this.stepGOL, 100);
+    this.intervalId = setInterval(this.stepGOL, 100); //takes a step every 100ms
   };
 
   handlemouseDown(row, col) {
@@ -48,6 +55,15 @@ export default class CellAutomata extends Component {
     this.setState({ mouseIsPressed: false });
   }
 
+  start = () => {
+    var e = document.getElementById("automation"); //gets automation from dropdown list
+    var a = e.value;
+    this.setState({ automation: a });
+    if (a === "GOL") {
+      this.runGameOfLife();
+    }
+  }
+
   stop = () => {
     clearInterval(this.intervalId);
   };
@@ -55,28 +71,37 @@ export default class CellAutomata extends Component {
   clear = () => {
     this.componentDidMount();
     this.stop();
-    this.generations = 0;
+    this.setState({ generations: 0 });
   };
 
   seed = () => {
     const grid = seededGrid();
     this.setState({ grid });
+    this.stop();
+    this.setState({ generations: 0 });
   };
 
   render() {
-    const { grid, mouseIsPressed, started } = this.state;
+    const { grid, mouseIsPressed, started, automations } = this.state;
+
+    let automationList = automations.length > 0 && automations.map((item, i) => {
+      return (
+        <option key={i} value={item.id}>{item.name}</option>
+      )
+    }, this);
 
     return (
       <>
         <br></br>
-        <select name="Automation" id="automations">
-          <option value="GOL">Game Of Life</option>
+        <select class="dropdown" id="automation">
+          {automationList}
         </select>
 
-        <button onClick={() => this.runGameOfLife()}>Start</button>
-        <button onClick={() => this.stop()}>Stop</button>
-        <button onClick={() => this.clear()}>Clear</button>
-        <button onClick={() => this.seed()}>Random Seed</button>
+
+        <button class="button" onClick={() => this.start()}>Start</button>
+        <button class="button" onClick={() => this.stop()}>Stop</button>
+        <button class="button" onClick={() => this.clear()}>Clear</button>
+        <button class="button" onClick={() => this.seed()}>Random Seed</button>
 
         <div className="grid">
           {grid.map((row, rowInd) => {
@@ -104,7 +129,8 @@ export default class CellAutomata extends Component {
             );
           })}
         </div>
-        <h1 id="generations">Generations: {generations}</h1>
+        <br></br>
+        <div class="generations"> Generations: {this.state.generations}</div>
       </>
     );
   }

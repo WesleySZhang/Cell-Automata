@@ -4,7 +4,39 @@
   resize: none;
 }
 
-.generations {
-  font: Sans-serif;
-  color: rgb(232, 8, 8);
+.button{
+  background-color: #1ae6c4;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+
+.dropdown {
+  background-color: #1ae6c4;
+  color: white;
+  min-width: 100px;
+  border:0px;
+  outline:0px;
+  padding: 15px 32px;
+  font-size: 16px;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+
+.generations{
+  color:white;
+  font-size: 24px;
+  padding: 15px 32px;
+  margin: 0px 0px;  
+  width:300px;
+  background-color: #1ae6c4;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
