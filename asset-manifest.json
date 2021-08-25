@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/Cell-Automata/static/css/main.44a87572.chunk.css",
-    "main.js": "/Cell-Automata/static/js/main.0ebb0b62.chunk.js",
-    "main.js.map": "/Cell-Automata/static/js/main.0ebb0b62.chunk.js.map",
-    "runtime-main.js": "/Cell-Automata/static/js/runtime-main.d0d578a1.js",
-    "runtime-main.js.map": "/Cell-Automata/static/js/runtime-main.d0d578a1.js.map",
-    "static/js/2.a45bd308.chunk.js": "/Cell-Automata/static/js/2.a45bd308.chunk.js",
-    "static/js/2.a45bd308.chunk.js.map": "/Cell-Automata/static/js/2.a45bd308.chunk.js.map",
-    "static/js/3.39cc6335.chunk.js": "/Cell-Automata/static/js/3.39cc6335.chunk.js",
-    "static/js/3.39cc6335.chunk.js.map": "/Cell-Automata/static/js/3.39cc6335.chunk.js.map",
+    "main.css": "/Cell-Automata/static/css/main.42fc735f.chunk.css",
+    "main.js": "/Cell-Automata/static/js/main.eb377b40.chunk.js",
+    "main.js.map": "/Cell-Automata/static/js/main.eb377b40.chunk.js.map",
+    "runtime-main.js": "/Cell-Automata/static/js/runtime-main.2331c777.js",
+    "runtime-main.js.map": "/Cell-Automata/static/js/runtime-main.2331c777.js.map",
+    "static/js/2.57c12531.chunk.js": "/Cell-Automata/static/js/2.57c12531.chunk.js",
+    "static/js/2.57c12531.chunk.js.map": "/Cell-Automata/static/js/2.57c12531.chunk.js.map",
+    "static/js/3.064407a9.chunk.js": "/Cell-Automata/static/js/3.064407a9.chunk.js",
+    "static/js/3.064407a9.chunk.js.map": "/Cell-Automata/static/js/3.064407a9.chunk.js.map",
     "index.html": "/Cell-Automata/index.html",
-    "static/css/main.44a87572.chunk.css.map": "/Cell-Automata/static/css/main.44a87572.chunk.css.map",
-    "static/js/2.a45bd308.chunk.js.LICENSE.txt": "/Cell-Automata/static/js/2.a45bd308.chunk.js.LICENSE.txt",
+    "static/css/main.42fc735f.chunk.css.map": "/Cell-Automata/static/css/main.42fc735f.chunk.css.map",
+    "static/js/2.57c12531.chunk.js.LICENSE.txt": "/Cell-Automata/static/js/2.57c12531.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/Cell-Automata/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d0d578a1.js",
-    "static/js/2.a45bd308.chunk.js",
-    "static/css/main.44a87572.chunk.css",
-    "static/js/main.0ebb0b62.chunk.js"
+    "static/js/runtime-main.2331c777.js",
+    "static/js/2.57c12531.chunk.js",
+    "static/css/main.42fc735f.chunk.css",
+    "static/js/main.eb377b40.chunk.js"
   ]
 }
