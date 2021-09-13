@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Cell-Automata/static/css/main.eb4dcca8.chunk.css",
-    "main.js": "/Cell-Automata/static/js/main.7111812e.chunk.js",
-    "main.js.map": "/Cell-Automata/static/js/main.7111812e.chunk.js.map",
+    "main.css": "/Cell-Automata/static/css/main.51738e07.chunk.css",
+    "main.js": "/Cell-Automata/static/js/main.15cee5bc.chunk.js",
+    "main.js.map": "/Cell-Automata/static/js/main.15cee5bc.chunk.js.map",
     "runtime-main.js": "/Cell-Automata/static/js/runtime-main.2331c777.js",
     "runtime-main.js.map": "/Cell-Automata/static/js/runtime-main.2331c777.js.map",
     "static/js/2.89b1f9ad.chunk.js": "/Cell-Automata/static/js/2.89b1f9ad.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.064407a9.chunk.js": "/Cell-Automata/static/js/3.064407a9.chunk.js",
     "static/js/3.064407a9.chunk.js.map": "/Cell-Automata/static/js/3.064407a9.chunk.js.map",
     "index.html": "/Cell-Automata/index.html",
-    "static/css/main.eb4dcca8.chunk.css.map": "/Cell-Automata/static/css/main.eb4dcca8.chunk.css.map",
+    "static/css/main.51738e07.chunk.css.map": "/Cell-Automata/static/css/main.51738e07.chunk.css.map",
     "static/js/2.89b1f9ad.chunk.js.LICENSE.txt": "/Cell-Automata/static/js/2.89b1f9ad.chunk.js.LICENSE.txt",
     "static/media/logo.6ce24c58.svg": "/Cell-Automata/static/media/logo.6ce24c58.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.2331c777.js",
     "static/js/2.89b1f9ad.chunk.js",
-    "static/css/main.eb4dcca8.chunk.css",
-    "static/js/main.7111812e.chunk.js"
+    "static/css/main.51738e07.chunk.css",
+    "static/js/main.15cee5bc.chunk.js"
   ]
 }
