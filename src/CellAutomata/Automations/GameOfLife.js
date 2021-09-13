@@ -1,6 +1,6 @@
 import _ from "lodash"
 
-export function gameOfLife(grid, rows, cols){
+function gameOfLife(grid, rows, cols){
     let next = _.cloneDeep(grid);
     
     for (let i = 0; i < rows; i++){
@@ -49,3 +49,5 @@ function countNeighbors(grid, x, y, rows, cols){
     
     return sum;
 }
+
+export{gameOfLife,countNeighbors}

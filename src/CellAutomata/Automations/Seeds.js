@@ -1,7 +1,7 @@
-import _ from "lodash"
 import {countNeighbors} from "./GameOfLife.js"
+import _ from "lodash"
 
-export function briansBrain(grid, rows, cols){
+export function Seeds(grid, rows, cols){
     let next = _.cloneDeep(grid);
     
     for (let i = 0; i < rows; i++){
@@ -11,15 +11,13 @@ export function briansBrain(grid, rows, cols){
             const neighbors = countNeighbors(grid, i, j, rows, cols);            
             
 
-            if(state==1){
-                next[i][j].isAlive = 2;
-            }
-            else if (state==2){
-                next[i][j].isAlive = 0;
-            }
-            else if (state==0 && neighbors==2){
+            if(state==0 && neighbors==2){
                 next[i][j].isAlive = 1;
             }
+            else{
+                next[i][j].isAlive = 0;
+            }
+            
         }
     }
 

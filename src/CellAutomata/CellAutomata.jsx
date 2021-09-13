@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { gameOfLife } from "./Automations/GameOfLife";
 import { briansBrain } from "./Automations/BriansBrain";
+import { Seeds } from "./Automations/Seeds";
 import Cell from "./Components/Cell/Cell";
 
 import "./CellAutomata.css";
@@ -20,6 +21,7 @@ export default class CellAutomata extends Component {
         // { id: '', name: 'Select Automation' },
         { id: 'GOL', name: 'Game of Life' },
         { id: 'BB', name: 'Brian\'s Brain' },
+        { id: 'Seeds', name: 'Seeds' },
       ],
       automation: ""
     };
@@ -42,6 +44,12 @@ export default class CellAutomata extends Component {
     this.setState({ generations: this.state.generations + 1 });
   };
 
+  stepSeeds = () => {
+    const newGrid = Seeds(this.state.grid, rows, cols);
+    this.setState({ grid: newGrid });
+    this.setState({ generations: this.state.generations + 1 });
+  };
+
   runGameOfLife = () => {
     clearInterval(this.intervalId);
     this.intervalId = setInterval(this.stepGOL, 100); //takes a step every 100ms
@@ -49,7 +57,12 @@ export default class CellAutomata extends Component {
 
   runBriansBrain = () => {
     clearInterval(this.intervalId);
-    this.intervalId = setInterval(this.stepBB, 100); //takes a step every 100ms
+    this.intervalId = setInterval(this.stepBB, 100); 
+  };
+
+  runSeeds = () => {
+    clearInterval(this.intervalId);
+    this.intervalId = setInterval(this.stepSeeds, 100); 
   };
 
   handlemouseDown(row, col) {
@@ -68,14 +81,16 @@ export default class CellAutomata extends Component {
   }
 
   start = () => {
-    var e = document.getElementById("automation"); //gets automation from dropdown list
-    var a = e.value;
-    this.setState({ automation: a });
-    if (a === 'GOL') {
+    var automationType = document.getElementById("automation").value; //gets automation from dropdown list
+    this.setState({ automation: automationType });
+    if (automationType === 'GOL') {
       this.runGameOfLife();
     }
-    else if (a === 'BB') {
+    else if (automationType === 'BB') {
       this.runBriansBrain();
+    }
+    else if (automationType === 'Seeds') {
+      this.runSeeds();
     }
   }
 
