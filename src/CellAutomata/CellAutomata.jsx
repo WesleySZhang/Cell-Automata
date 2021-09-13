@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { gameOfLife } from "./Automations/GameOfLife";
+import { briansBrain } from "./Automations/BriansBrain";
 import Cell from "./Components/Cell/Cell";
 
 import "./CellAutomata.css";
@@ -16,9 +17,9 @@ export default class CellAutomata extends Component {
       started: false,
       generations: 0,
       automations: [
-        { id: '', name: 'Select Automation' },
-        { id: 'GOL', name: 'Game of Life' }
-
+        // { id: '', name: 'Select Automation' },
+        { id: 'GOL', name: 'Game of Life' },
+        { id: 'BB', name: 'Brian\'s Brain' },
       ],
       automation: ""
     };
@@ -35,9 +36,20 @@ export default class CellAutomata extends Component {
     this.setState({ generations: this.state.generations + 1 });
   };
 
+  stepBB = () => {
+    const newGrid = briansBrain(this.state.grid, rows, cols);
+    this.setState({ grid: newGrid });
+    this.setState({ generations: this.state.generations + 1 });
+  };
+
   runGameOfLife = () => {
     clearInterval(this.intervalId);
     this.intervalId = setInterval(this.stepGOL, 100); //takes a step every 100ms
+  };
+
+  runBriansBrain = () => {
+    clearInterval(this.intervalId);
+    this.intervalId = setInterval(this.stepBB, 100); //takes a step every 100ms
   };
 
   handlemouseDown(row, col) {
@@ -59,8 +71,11 @@ export default class CellAutomata extends Component {
     var e = document.getElementById("automation"); //gets automation from dropdown list
     var a = e.value;
     this.setState({ automation: a });
-    if (a === "GOL") {
+    if (a === 'GOL') {
       this.runGameOfLife();
+    }
+    else if (a === 'BB') {
+      this.runBriansBrain();
     }
   }
 
@@ -164,7 +179,7 @@ const createNode = (col, row) => {
   return {
     col,
     row,
-    isAlive: false,
+    isAlive: 0,
   };
 };
 
@@ -172,15 +187,22 @@ const randomNode = (col, row) => {
   return {
     col,
     row,
-    isAlive: Math.random() > 0.5,
+    isAlive: Math.round(Math.random()),
   };
 };
 
 const getNewGrid = (grid, row, col) => {
   const cell = grid[row][col];
+  let newState;
+  if(cell.isAlive == 1){
+    newState = 0;
+  }
+  else{
+    newState = 1;
+  }
   const newCell = {
     ...cell,
-    isAlive: !cell.isAlive,
+    isAlive: newState,
   };
   grid[row][col] = newCell;
 };

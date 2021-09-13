@@ -13,8 +13,11 @@ export default class Cell extends Component {
       this.props;
     let cellState = "cell-dead";
 
-    if (isAlive) {
+    if (isAlive==1) {
       cellState = "cell-alive";
+    }
+    else if (isAlive==2){
+      cellState = "cell-dying";
     }
 
     return (

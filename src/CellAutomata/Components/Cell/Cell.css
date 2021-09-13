@@ -13,3 +13,7 @@
 .cell-dead {
   background-color: white;
 }
+
+.cell-dying {
+  background-color: gray;
+}

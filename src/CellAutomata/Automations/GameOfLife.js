@@ -13,12 +13,12 @@ export function gameOfLife(grid, rows, cols){
                 console.log(neighbors);
             }
 
-            if((state === false) && (neighbors === 3)){
-                next[i][j].isAlive = true;
-            } else if ((state === true) && ((neighbors === 2) || (neighbors ===3))){
-                next[i][j].isAlive = true;
+            if((state === 0) && (neighbors === 3)){
+                next[i][j].isAlive = 1;
+            } else if ((state === 1) && ((neighbors === 2) || (neighbors ===3))){
+                next[i][j].isAlive = 1;
             } else {     
-                next[i][j].isAlive = false;
+                next[i][j].isAlive = 0;
             }
         }
     }
@@ -35,7 +35,7 @@ function countNeighbors(grid, x, y, rows, cols){
             
             if(inBounds){
                 // if(grid[(x+i)][(y+j)].isAlive && notCurrent ){
-                    if(grid[x+i][y+j].isAlive){
+                    if(grid[x+i][y+j].isAlive==1){
                         sum++;
                     }
                 // }
@@ -43,7 +43,7 @@ function countNeighbors(grid, x, y, rows, cols){
         }     
     }
 
-    if(grid[(x)][(y)].isAlive){
+    if(grid[(x)][(y)].isAlive==1){
         sum--;
     }
     
