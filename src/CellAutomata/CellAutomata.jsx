@@ -6,8 +6,8 @@ import Cell from "./Components/Cell/Cell";
 
 import "./CellAutomata.css";
 
-const rows = 50;
-const cols = 80;
+const rows = 75;
+const cols = 160;
 
 export default class CellAutomata extends Component {
   constructor(props) {
